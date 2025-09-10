@@ -1,4 +1,5 @@
-﻿using System.Formats.Asn1;
+﻿using System.ComponentModel.Design;
+using System.Formats.Asn1;
 
 namespace Lab1
 {
@@ -139,10 +140,17 @@ namespace Lab1
             const int bank = 10000;
 
             // code here
-
+            int auroras;
+            if (pupils % 7 == 0){
+                auroras = pupils / 7;
+            }
+            else
+            {
+                auroras = pupils / 7 + 1;
+            }
             if (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0))
             {
-                if ((pupils / 7 + 1) * salary + 5 * pupils <= bank)
+                if (auroras * salary + 5 * pupils <= bank)
                 {
                     answer = true;
                 }
